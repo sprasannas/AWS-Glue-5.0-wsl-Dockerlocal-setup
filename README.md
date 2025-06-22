@@ -25,6 +25,7 @@
 
 
 4. export WORKSPACE_LOCATION=/home/spras/gluetest
+   
 What it does: Sets the environment variable WORKSPACE_LOCATION to the path /home/spras/gluetest.
 
 Purpose: Used to refer to the directory where your project or AWS Glue workspace files are stored.
@@ -32,6 +33,7 @@ Purpose: Used to refer to the directory where your project or AWS Glue workspace
 Why it's useful: Instead of typing the full path every time, you can just use $WORKSPACE_LOCATION in your scripts or terminal.
 
 5. export SCRIPT_FILE_NAME=sample.py
+   
 What it does: Sets the environment variable SCRIPT_FILE_NAME to the filename sample.py.
 
 Purpose: Helps reference the Python script file dynamically.
@@ -39,6 +41,7 @@ Purpose: Helps reference the Python script file dynamically.
 Why it's useful: You can use this in automation scripts or command-line commands to run or copy files.
 
 6. export PROFILE_NAME=default
+   
 What it does: Sets the environment variable PROFILE_NAME to default.
 
 Purpose: Commonly used with AWS CLI or Boto3 to specify which AWS credentials profile to use (from ~/.aws/credentials).
@@ -46,6 +49,7 @@ Purpose: Commonly used with AWS CLI or Boto3 to specify which AWS credentials pr
 Why it's useful: You might have multiple AWS profiles (e.g., dev, prod, default). This sets the one your script or session should use.
 
 7.Running a Docker container that executes an AWS Glue 5.0 Spark job locally using spark-submit.
+
 spras@spsrao:~$ docker run -it --rm \
     -v ~/.aws:/home/hadoop/.aws \
     -v $WORKSPACE_LOCATION:/home/hadoop/workspace/ \
@@ -55,7 +59,7 @@ spras@spsrao:~$ docker run -it --rm \
     spark-submit /home/hadoop/workspace/$SCRIPT_FILE_NAME
 
 8.To build a custom Docker image for your AWS Glue project using your local files
-      docker build -t testproject/glue-sample:5 .
+docker build -t testproject/glue-sample:5 .
 
 
 <img width="726" alt="image" src="https://github.com/user-attachments/assets/c9d4608b-59c7-4aef-9092-f1c023ac9118" />
